@@ -1,0 +1,12 @@
+{
+  "name": "css-groups",
+  "version": "0.1.0",
+  "description": "A JavaScript object of regular expressions that match CSS properties grouped by category.",
+  "main": "groups.js",
+  "author": "Avi Goldman <me@avigoldman.com> (http://avigoldman.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "lodash": "^4.17.4",
+    "proxyquire": "^1.8.0"
+  }
+}
