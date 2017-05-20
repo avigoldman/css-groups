@@ -23,7 +23,7 @@ const groups = {
   shadow: match(prefix('box', 'text'), 'shadow'),
   box: match('box-', anyof(), variant()),
 
-
+  
   // alignment helpers
   float: match(anyof('float', 'clear')),
   grid: match('grid', variant(), variant()),
@@ -39,6 +39,37 @@ const groups = {
     join('flex', variant('basis', 'grow', 'shrink')),
     'align-self',
     'order')),
+  
+  
+  // text
+  text: match(anyof(
+    join('text', variant(), variant()),
+    join('word-', anyof('break', 'spacing', 'wrap')),
+    join('line-', anyof('break', 'height')),
+    'hanging-punctuation',
+    'hyphens',
+    'letter-spacing',
+    'overflow-wrap',
+    'tab-size',
+    'white-space',
+    'initial-letter',
+    'vertical-align',
+    'color')),
+  font: match('font', variant(), variant()), 
+  writing: match(anyof(
+    'direction',
+    'text-orientation',
+    'text-combine-upright',
+    'unicode-bidi',
+    'user-select',
+    'writing-mode')),
+  column: match(anyof(
+    join(prefix('column', 'page'), 'break-', anyof('after', 'before', 'inside')),
+    join('columns', variant()),
+    'columns',
+    'windows')),
+
+
 };
 
 
