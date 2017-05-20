@@ -4,6 +4,7 @@ const { match, join, anyof, variant, prefix } = require('./lib/regex');
 
 const directional = variant('top', 'right', 'bottom', 'left');
 const corners = variant('top-left', 'top-right', 'bottom-right', 'bottom-left');
+const minMax = prefix('max', 'min');
 
 const groups = {
   // boxes
@@ -21,6 +22,23 @@ const groups = {
   overflow: match('overflow', variant('x', 'y')),
   shadow: match(prefix('box', 'text'), 'shadow'),
   box: match('box-', anyof(), variant()),
+
+
+  // alignment helpers
+  float: match(anyof('float', 'clear')),
+  grid: match('grid', variant(), variant()),
+  flex: match(anyof(
+    join('align', variant('content', 'items', 'self')),
+    join('flex', variant()),
+    'order')),
+  flexParent: match(anyof(
+    join('align', variant('content', 'items')),
+    join('flex-', anyof('direction', 'flow', 'wrap', 'content')),
+    'justify-content')),
+  flexChild: match(anyof(
+    join('flex', variant('basis', 'grow', 'shrink')),
+    'align-self',
+    'order')),
 };
 
 
