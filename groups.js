@@ -89,7 +89,18 @@ const groups = {
     'fill')),
   scrollbar: match('scrollbar', variant()),
   
-  
+  // modifiers
+  transform: match(anyof(
+    join('transform', variant('origin', 'style')),
+    'backface-visibility',
+    'perspective', 
+    'perspective-origin')),
+  blending: match(anyof('isolation', 'mix-blend-mode')),
+  filter: match('filter', 'opacity'),
+  clip: match('clip', variant('path')),
+  mask: match('mask', variant('type')),
+
+ 
 };
 
 
