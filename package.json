@@ -1,6 +1,6 @@
 {
   "name": "css-groups",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A JavaScript object of regular expressions that match CSS properties grouped by category.",
   "main": "groups.js",
   "author": "Avi Goldman <me@avigoldman.com> (http://avigoldman.com)",
@@ -11,5 +11,18 @@
   "devDependencies": {
     "lodash": "^4.17.4",
     "proxyquire": "^1.8.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/aymg/css-groups/issues"
+  },
+  "homepage": "https://github.com/aymg/css-groups",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aymg/css-groups"
+  },
+  "keywords": [
+    "css",
+    "groups",
+    "regex"
+  ]
 }
