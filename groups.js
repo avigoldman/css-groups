@@ -69,7 +69,27 @@ const groups = {
     'columns',
     'windows')),
 
-
+  // elements
+  table: match(anyof(
+    'border-collapse',
+    'border-spacing',
+    'caption-side',
+    'empty-cells',
+    'table-layout')),
+  list: match(anyof(
+    join('list-style', variant('image', 'position', 'type')),
+    'counter-increment',
+    'counter-reset')),
+  image: match(anyof(
+    join('image-', anyof('orientation', 'rendering', 'resolution')),
+    join('object-', anyof('fit', 'position'))
+  )),
+  svg: match(anyof(
+    join('stroke', variant()),
+    'fill')),
+  scrollbar: match('scrollbar', variant()),
+  
+  
 };
 
 
