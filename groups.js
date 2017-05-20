@@ -100,7 +100,15 @@ const groups = {
   clip: match('clip', variant('path')),
   mask: match('mask', variant('type')),
 
- 
+  // transitions and animations
+  transition: match('transition', variant('property', 'duration', 'timing-function', 'delay')),
+  animation: match(anyof(
+    join('offset-', anyof('distance', 'path', 'rotation')),
+    join('motion-', anyof('distance', 'path', 'rotation')), // deprecated
+    'will-change',
+    'animation')),
+
+  
 };
 
 
