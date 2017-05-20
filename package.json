@@ -5,6 +5,9 @@
   "main": "groups.js",
   "author": "Avi Goldman <me@avigoldman.com> (http://avigoldman.com)",
   "license": "MIT",
+  "scripts": {
+    "docs": "node expander/index.js"
+  },
   "devDependencies": {
     "lodash": "^4.17.4",
     "proxyquire": "^1.8.0"
