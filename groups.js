@@ -108,7 +108,22 @@ const groups = {
     'will-change',
     'animation')),
 
-  
+  // pseudo 
+  pseudo: match(anyof('content', 'initial-letter')),
+
+  // print
+  print: match(anyof(
+    join(prefix('column', 'page'), 'break-', anyof('after', 'before', 'inside')),
+    'orphans',
+    'widows',
+    'marks',
+    'bleed',
+    'quotes')),
+
+  // any
+  all: match('all'),
+  appearance: match('appearance'),
+  other: match(anyof())
 };
 
 
