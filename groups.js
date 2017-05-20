@@ -11,7 +11,6 @@ const groups = {
   margin: match('margin', directional),
   padding: match('padding', directional),
   border: match('border', directional, variant('style', 'color', 'width')),
-  border: match('border-top', variant('style', 'color', 'width')),
   borderImage: match('border', '-image', variant('outset', 'repeat', 'slice', 'source', 'width')),
   borderRadius: match('border', corners, '-radius'),
   background: match('background', variant()),
@@ -20,7 +19,6 @@ const groups = {
   width: match(minMax, 'width'),
   height: match(minMax, 'height'),
   overflow: match('overflow', variant('x', 'y')),
-  shadow: match(prefix('box', 'text'), 'shadow'),
   box: match('box-', anyof(), variant()),
 
   
@@ -87,7 +85,6 @@ const groups = {
   svg: match(anyof(
     join('stroke', variant()),
     'fill')),
-  scrollbar: match('scrollbar', variant()),
   
   // modifiers
   transform: match(anyof(
@@ -96,7 +93,7 @@ const groups = {
     'perspective', 
     'perspective-origin')),
   blending: match(anyof('isolation', 'mix-blend-mode')),
-  filter: match('filter', 'opacity'),
+  filter: match(anyof('filter', 'opacity')),
   clip: match('clip', variant('path')),
   mask: match('mask', variant('type')),
 
@@ -125,6 +122,5 @@ const groups = {
   appearance: match('appearance'),
   other: match(anyof())
 };
-
 
 module.exports = groups;
