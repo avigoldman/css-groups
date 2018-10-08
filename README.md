@@ -11,7 +11,7 @@ npm i css-groups --save
 ```js
 const groups = require('css-groups');
 
-console.log(groups); // do your thang
+console.log(groups); // do your thing
 ```
 
 ## The groups
